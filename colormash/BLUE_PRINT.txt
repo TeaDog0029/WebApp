@@ -1,0 +1,65 @@
+GOAL: Create a facemash-like (cf what later gave birth to Facebook) but with tints of purple. Users will be ask which tint is the darkest
+
+
+STEP1: Create the templates
+		- vote.html
+		- rankings.html
+		- details.html
+		- new_tint.html
+
+		... all these of course come after "base.html"
+
+		VOTE.HTML
+
+			- 2 random tints - users will have to click on one of them
+			- This page will also feature a "rankings" button. It shall redirect users to  "rankings.html"
+
+		RANKINGS.HTML
+
+			- Will display the list - whether horizontally or vertically, of all tints, sorted from the darkest to the brightest
+			- Underneath - or besides, each tint, the hex notation shall appear
+			- Their rank will be based on users' choices - applied to Chess' ELO algorithm
+			- Each tint (image) will be clickable, and redirect users to "details.html"
+
+		DETAILS.HTML
+
+			- One page per tint
+			- Shall display the tint itself
+			- Its hex + RGB notation
+			- Its ELO (+ ELO of rank ± 1)
+			- Its rank (+ rank and hex name of rank ± 1)
+
+		NEW_TINT.HTML
+
+			- This page shall force me to practice forms
+			- It shall enable the admin to upload, change, and remove another tint, but NOT the other tints
+
+STEP2: Create the only model
+		tint :
+			hex_name
+			rgb_name
+			rank
+			elo
+			image
+			number_of_clicks
+
+		At the beginning, ranks shall all be equal to "1" because all tints shall start with a ELO of 1400
+		Ranks shall always be based on the ELO - which means draws are possible
+
+		The ELO shall be (more or less) the one used in Chess
+		!!!! For the 1st implementation, counting the number of clicks shall be enough - but a second app - dedicated to this ranking might be necessary
+
+STEP3: Create the views
+		- vote.py
+		- rankings.py
+		- details.py
+		- new_tint.py
+
+STEP4: Define my urls
+		This means a second pass will be necesary onto the templates.
+
+
+
+
+
+

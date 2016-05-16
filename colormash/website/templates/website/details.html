@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    <title>Colormash - tint #{{ tint.hex_name }}</title>
+</head>
+<body>
+    <div>
+        <h1 id = "showdown"><a href="{% url 'welcome_view' %}">Tint of purple: #{{ tint.hex_name }}</a></h1>
+    </div>
+    <div class = "image_details">
+        <img src=" {{ tint.image.url }}" class = 'img-resp'>
+    </div>
+    <div>
+        <ul class = "lead" id = "list_details">
+        <li> Hexadecimal name: #{{ tint.hex_name }}</li>
+        <li> RGB code: {{ tint.rgb_name }}</li>
+        <li> ELO: {{ tint.elo }}</li>
+        <li> Rank: {{ tint.rank }} </li>
+        </ul>
+    </div>
+    <div class = "clearfix"></div>
+</html>

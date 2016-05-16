@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Colormash</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    </head>
+    <body>
+    {% block content %}
+        <h1>Add a new tint of purple !</h1>
+        <h2> Please submit an image and type its name in hexadecimal</h2>
+        <form method = "POST" class = "add_tint_form" enctype = "multipart/form-data">{%csrf_token %}
+            {{ form }}
+            <input type="submit" value="Save">
+        </form> 
+    {% endblock %}
+    </body>
+</html>

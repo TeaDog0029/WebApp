@@ -1,0 +1,24 @@
+body {
+	background-color: lightblue;
+}
+
+h1 a {
+    color: #9900CC;
+    display: block;
+    padding: 10px 0 0 0;
+    text-decoration: none;
+    width:100%;
+    text-align:center;
+}
+
+.image {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 20px;
+}
+
+#showdown {
+	margin-top: 50px;
+	text-align: center;
+}

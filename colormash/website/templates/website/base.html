@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    <title>Colormash</title>
+</head>
+<body>
+    <div>
+        <h1><a href="">Which tint is the darkest?</a></h1>
+    </div>
+    <div id = "showdown">
+        <img id = "in-line" class = "image" src="../static/tints_purple/tints_purple/808080.png" alt="My image1"/>
+        <img id = "in-line" class = "image" src="../static/tints_purple/tints_purple/e43bff.png" alt="My image2"/>
+    </div>
+    <div>
+        <a href="{% url 'add_tint' %}"><span class="glyphicon glyphicon-plus"</span></a>
+    </div>
+</html>
