@@ -2,7 +2,7 @@
 #from django.db import models
 from django.db import models
 from django.utils import timezone
-from algorithm import convert_hex_to_rgb
+from .algorithm import convert_hex_to_rgb
 
 # Create your models here.
 class Tint(models.Model):

@@ -7,19 +7,17 @@
     <title>Colormash - tint #{{ tint.hex_name }}</title>
 </head>
 <body>
-    <div>
-        <h1 id = "showdown"><a href="{% url 'welcome_view' %}">Tint of purple: #{{ tint.hex_name }}</a></h1>
+    <h1 class="standard_title"><a href="{% url 'welcome_view' %}">Tint of purple: #{{ tint.hex_name }}</a></h1>
+    <div class="container">
+        <div class="row">
+            <img id="in-line" class="col-sm-4" src=" {{ tint.image.url }}" class = 'img-resp'>
+            <ul class = "col-sm-6">
+                <li> Hexadecimal name: #{{ tint.hex_name }}</li>
+                <li> RGB code: {{ tint.rgb_name }}</li>
+                <li> ELO: {{ tint.elo }}</li>
+                <li> Rank: {{ tint.rank }} </li>
+            </ul>
+        </div>
     </div>
-    <div class = "image_details">
-        <img src=" {{ tint.image.url }}" class = 'img-resp'>
-    </div>
-    <div>
-        <ul class = "lead" id = "list_details">
-        <li> Hexadecimal name: #{{ tint.hex_name }}</li>
-        <li> RGB code: {{ tint.rgb_name }}</li>
-        <li> ELO: {{ tint.elo }}</li>
-        <li> Rank: {{ tint.rank }} </li>
-        </ul>
-    </div>
-    <div class = "clearfix"></div>
+</body>
 </html>

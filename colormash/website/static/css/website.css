@@ -1,14 +1,48 @@
+a {
+	text-decoration: none;
+}
+
+/*Used in every page*/
 body {
 	background-color: lightblue;
 }
 
-h1 a {
+
+/*Used for the welcome_page*/
+h1, .standard_title {
     color: #9900CC;
     display: block;
-    padding: 10px 0 0 0;
-    text-decoration: none;
-    width:100%;
+    margin-top: 25px;
+    margin-bottom: 70px;
+    font-family: Comfortaa, Courier;
+    font-size: 70px;
     text-align:center;
+}
+
+/*Used for the add_tint page*/
+h2 {
+	color: orange;
+	font-family: "Fira Sans";
+	margin-bottom: 25px;
+	margin-left: 30px;
+}
+
+/*Used for the add_tint page*/
+form {
+	font-family: "Fira Sans";
+	font-style: bold;
+	font-size: 15px;
+	margin-left: 30px;
+	display: block;
+
+}
+
+
+ul {
+	font-family: Comfortaa, Courier;
+	margin-left: 30px;
+	font-size: 35px;
+	line-height: 70px;
 }
 
 .image {
@@ -16,11 +50,6 @@ h1 a {
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 20px;
-}
-
-#showdown {
-	margin-top: 50px;
-	text-align: center;
 }
 
 .image_details {
@@ -34,5 +63,45 @@ h1 a {
 }
 
 .clearfix {
-	clear: both
+	clear: both;
 }
+
+
+/*Used for the welcome_page*/
+#in-line {
+	border: 10px solid #cccccc;
+	margin-right: 30px;
+	margin-left:  30px;
+	width: 30%;
+	padding:0;
+
+}
+
+/*used for the welcome_page*/
+#in-line:active {
+	top: 2px;
+}
+
+.container {
+	justify-content: center;
+}
+
+/*Used for the welcome_page and add_tint*/
+.btn.btn-primary {
+	margin: 50px 70px 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

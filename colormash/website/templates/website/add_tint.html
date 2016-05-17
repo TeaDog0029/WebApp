@@ -12,7 +12,7 @@
         <h2> Please submit an image and type its name in hexadecimal</h2>
         <form method = "POST" class = "add_tint_form" enctype = "multipart/form-data">{%csrf_token %}
             {{ form }}
-            <input type="submit" value="Save">
+            <input class = "btn btn-primary" type="submit" value="Save">
         </form> 
     {% endblock %}
     </body>
