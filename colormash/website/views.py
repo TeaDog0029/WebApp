@@ -5,7 +5,10 @@ from .forms import TintForm
 
 # Create your views here.
 def welcome_view(request):
-	return render(request, 'website/base.html',{})
+    random_tint_one = Tint.objects.order_by('?').first()
+    random_tint_two = Tint.objects.order_by('?').first()
+    random_tints = {'random_tint_one' : random_tint_one, 'random_tint_two' : random_tint_two}
+    return render(request, 'website/base.html',{'random_tint_one': random_tint_one , 'random_tint_two': random_tint_two})
 
 def add_tint(request):
     form = TintForm(request.POST or None, request.FILES or None)
@@ -23,5 +26,8 @@ def details(request, pk):
     tint = get_object_or_404(Tint, pk = pk)
     return render(request, 'website/details.html', {'tint': tint})
 
+def tint_list(request):
+    tints = Tint.objects.order_by('elo')
+    return render(request, 'website/rankings.html',{'tints':tints})
 
 

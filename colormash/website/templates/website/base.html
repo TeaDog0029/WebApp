@@ -9,12 +9,13 @@
 <body>
     <nav class="col-sm12 text-right">
         <a class="btn btn-primary" href="{% url 'add_tint' %}" role="button"><span class="glyphicon glyphicon-plus"></span>  Add a tint!</a>
+        <a class="btn btn-primary" href="{% url 'ranking' %}" role="button"><span class="glyphicon glyphicon-tower"></span>  Ranking</a>
     </nav>
     <h1>Which tint is the darkest?</h1>
     <div class = "container">
         <div class="row">
-            <a><img id = "in-line" class = "col-sm-6" src="../static/tints_purple/tints_purple/808080.png" alt="My image1"/></a>
-            <a><img id = "in-line" class = "col-sm-6" src="../static/tints_purple/tints_purple/e43bff.png" alt="My image2"/></a>
+            <a><img id = "in-line" class = "col-sm-6" src="{{ random_tint_one.image.url }}" alt="My image1"/></a>
+            <a><img id = "in-line" class = "col-sm-6" src="{{ random_tint_two.image.url }}" alt="My image2"/></a>
         </div>
     </div>
 </html>

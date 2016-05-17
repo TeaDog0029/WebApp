@@ -1,6 +1,6 @@
-a {
+a:link {
 	text-decoration: none;
-}
+	}
 
 /*Used in every page*/
 body {
@@ -8,8 +8,18 @@ body {
 }
 
 
+/*Used for the add_tint page*/
+form {
+	font-family: "Fira Sans";
+	font-style: bold;
+	font-size: 15px;
+	margin-left: 30px;
+	display: block;
+
+}
+
 /*Used for the welcome_page*/
-h1, .standard_title {
+h1 {
     color: #9900CC;
     display: block;
     margin-top: 25px;
@@ -27,23 +37,28 @@ h2 {
 	margin-left: 30px;
 }
 
-/*Used for the add_tint page*/
-form {
-	font-family: "Fira Sans";
-	font-style: bold;
-	font-size: 15px;
-	margin-left: 30px;
-	display: block;
-
-}
-
-
 ul {
 	font-family: Comfortaa, Courier;
 	margin-left: 30px;
 	font-size: 35px;
 	line-height: 70px;
+	list-style: none;
 }
+
+/*Used for the welcome_page and add_tint*/
+.btn.btn-primary {
+	margin: 50px 70px 0 0;
+}
+
+.container {
+	justify-content: center;
+}
+
+
+.clearfix {
+	clear: both;
+}
+
 
 .image {
 	display: inline-block;
@@ -57,19 +72,9 @@ ul {
 	margin: 70px 40px 40px 40px;
 }
 
-#list_details {
-	margin: 110px 40px 40px 40px;
-	line-height: 250%;
-}
-
-.clearfix {
-	clear: both;
-}
-
-
 /*Used for the welcome_page*/
 #in-line {
-	border: 10px solid #cccccc;
+	border: 5px solid #ed8e0e;
 	margin-right: 30px;
 	margin-left:  30px;
 	width: 30%;
@@ -82,18 +87,15 @@ ul {
 	top: 2px;
 }
 
-.container {
-	justify-content: center;
+#list_details {
+	margin: 110px 40px 40px 40px;
+	line-height: 250%;
 }
 
-/*Used for the welcome_page and add_tint*/
-.btn.btn-primary {
-	margin: 50px 70px 0 0;
+#ranks {
+	margin-left: 0;
+	margin-top: 5px;
 }
-
-
-
-
 
 
 

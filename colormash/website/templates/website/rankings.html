@@ -1,0 +1,19 @@
+{% extends 'website/details.html' %}
+
+{% block content %}
+{% for tint in tints %}
+
+
+<div class="container" id = "ranks">
+    <div class="row">
+        <img id="in-line" class="col-sm-4" src=" {{ tint.image.url }}" class = 'img-resp'>
+        <ul class = "col-sm-6">
+            <li> Hexadecimal name: #{{ tint.hex_name }}</li>
+            <li> RGB code: {{ tint.rgb_name }}</li>
+            <li> ELO: {{ tint.elo }}</li>
+            <li> Rank: {{ tint.rank }} </li>
+        </ul>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

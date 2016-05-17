@@ -7,7 +7,8 @@
     <title>Colormash - tint #{{ tint.hex_name }}</title>
 </head>
 <body>
-    <h1 class="standard_title"><a href="{% url 'welcome_view' %}">Tint of purple: #{{ tint.hex_name }}</a></h1>
+    <h1><a href="{% url 'welcome_view' %}">Tint of purple: #{{ tint.hex_name }}</a></h1>
+    {% block content %}
     <div class="container">
         <div class="row">
             <img id="in-line" class="col-sm-4" src=" {{ tint.image.url }}" class = 'img-resp'>
@@ -19,5 +20,6 @@
             </ul>
         </div>
     </div>
+    {% endblock %}
 </body>
 </html>
