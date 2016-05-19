@@ -16,3 +16,13 @@ def elo(eloA, eloB, score_A):
 
     elo = [new_eloA , new_eloB]
     return elo
+    
+def extract_pk(position, string):
+    # structure of the string: "pk1:pk2"
+    if position == 1:
+        position_colon = string.index(":")
+        pk = string[:position_colon]
+        return pk
+    else:
+        pk = string[position_colon +1 :]
+        return pk

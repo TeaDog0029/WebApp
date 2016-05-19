@@ -7,4 +7,9 @@ class TintForm(forms.ModelForm):
 		model = Tint
 		fields = ('hex_name', 'image')
 			
-				
+class VoteForm(forms.Form):
+	winner_pk = forms.CharField(widget = forms.TextInput(attrs = {'vote_pk' : 'winner_pk'}))
+	loser_pk = forms.CharField(widget = forms.TextInput(attrs = {'vote_pk' : 'loser_pk'}))
+
+			
+										
