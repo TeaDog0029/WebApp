@@ -2,17 +2,22 @@
 
 
 var main = function(){
-    $('.welcome_page_form').click(function(event){
-    	//alert('app.js is running');
-    	var winner_pk = event.attr("name");
-    	var loser_pk = event.next().attr("name");
-    	alert('winner_pk = 'winner_pk);
-    	var first_row_table = $('#vote_pk').first();
-		console.log(winner_pk);
-		console.log(loser_pk);
+    $("button").click(function(){
+    	var winner_pk = $(this).attr("name");
+    	var loser_pk = $(this).next().attr("alt");
+    	//alert("pk = " + winner_pk);
+        var aux_a = $("input[name='winner_pk']").val(winner_pk);
+        $("input[name='loser_pk']").val(loser_pk);
+        alert("input winner = " + aux_a);
 
-		first_row_table.val(winner_pk);
-		first_row_table.next().val(loser_pk);
+
+
+  //   	var first_row_table = $().attr('vote_pk').first();
+		// console.log(winner_pk);
+		// console.log(loser_pk);
+
+		// first_row_table.val(winner_pk);
+		// first_row_table.next().val(loser_pk);
     });
 }
 

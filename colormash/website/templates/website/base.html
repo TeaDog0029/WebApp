@@ -15,7 +15,7 @@
     <div class = "container">
         <div class="row">
             <form method="POST" class="welcome_page_form">{%csrf_token %}
-                {{ voteForm.as_table }}
+                {{ voteForm }}
                 <button type = "submit" class ="{{ random_tint_one }}" name="{{ random_tint_one.pk }}">
                     <img src = "{{ random_tint_one.image.url }}"alt = "{{ random_tint_one.pk }}" id = "in-line">
                 </button>
