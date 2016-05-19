@@ -14,8 +14,14 @@
     <h1>Which tint is the darkest?</h1>
     <div class = "container">
         <div class="row">
-            <a><img id = "in-line" class = "col-sm-6" src="{{ random_tint_one.image.url }}" alt="My image1"/></a>
-            <a><img id = "in-line" class = "col-sm-6" src="{{ random_tint_two.image.url }}" alt="My image2"/></a>
+            <form method="POST" class="welcome_page_form">
+                <a><img id = "in-line" class = "col-sm-6" src="{{ random_tint_one.image.url }}" alt="My image1"/></a>
+                <a><img id = "in-line" class = "col-sm-6" src="{{ random_tint_two.image.url }}" alt="My image2"/></a>
+            </form>
         </div>
     </div>
+    <!-- JAVASCRIPT -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="../../static/app.js"></script>
+</body>
 </html>

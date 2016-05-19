@@ -5,9 +5,9 @@ from .forms import TintForm
 
 # Create your views here.
 def welcome_view(request):
-    random_tint_one = Tint.objects.order_by('?').first()
-    random_tint_two = Tint.objects.order_by('?').first()
-    random_tints = {'random_tint_one' : random_tint_one, 'random_tint_two' : random_tint_two}
+    random_tints = Tint.objects.order_by('?')[:2]
+    random_tint_one = random_tints[0]
+    random_tint_two = random_tints[1]
     return render(request, 'website/base.html',{'random_tint_one': random_tint_one , 'random_tint_two': random_tint_two})
 
 def add_tint(request):

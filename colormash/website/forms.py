@@ -7,5 +7,4 @@ class TintForm(forms.ModelForm):
 		model = Tint
 		fields = ('hex_name', 'image')
 			
-
-		
+				
