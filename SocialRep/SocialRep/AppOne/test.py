@@ -31,3 +31,8 @@ listA = [1,2,3,4,5,6]
 for line in test_list:
     aux = convert_timestamp(line[0])
     empty.append(aux)
+
+#http://chartapi.finance.yahoo.com/instrument/1.0/VOD/chartdata;type=quote;range=1d/csv
+closeP=[]
+for i in stock_data:
+    closeP.append(i[2])

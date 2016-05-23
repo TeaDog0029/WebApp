@@ -16,28 +16,42 @@ def convert_timestamp(Utimestamp):
     timestamp = datetime.datetime.fromtimestamp(int(Utimestamp)).strftime('%Y-%M-%d %H:%M:%S')
     return timestamp
 
+def build_dataset(dst_name, src_name, index, UTime):
+    if UTime == False:
+        for i in src_name:
+            dst_name.append(i[index])
+    else:
+         for i in src_name:
+            aux = convert_timestamp(i[index])
+            dst_name.append(aux)       
+
 def graph(stock, duration):
     yahoo_url = "http://chartapi.finance.yahoo.com/instrument/1.0/" + stock + "/chartdata;type=quote;range=" + duration + "/csv"
     raw_data = urllib.request.urlopen(yahoo_url).read().decode()
     stock_data =[]
     split_data = raw_data.split('\n')
+    # First, we get rud of the header of the document
     for line in split_data:
         split_line = line.split(',')
         if len(split_line) == 6:
             if 'value' not in line and 'volume' not in line:
                 stock_data.append(split_line)
-    # For the x-axis, we separately build the list:
+    # Declaration of our categories
     timestamp = []
-    for line in stock_data:
-        aux = convert_timestamp(line[0])
-        timestamp.append(aux)
-    # "loadtxt" will build us 5 arrays
-    closeP, highP, lowP, openP, volume = np.loadtxt(stock_data, delimiter = ',', unpack = True, usecols = (1,2,3,4,5))
-    print("%s" % lowP)
-    return stock_data
+    build_dataset(timestamp,stock_data,0,True)
+    closeP = []
+    build_dataset(closeP,stock_data,1,False)
+    highP = []
+    build_dataset(highP,stock_data,2,False)
+    lowP = []
+    build_dataset(lowP,stock_data,3,False)
+    openP = []
+    build_dataset(openP,stock_data,4,False)
+    volume = []
+    build_dataset(volume,stock_data,5,False)
     # Plotting parameters
     #plt.plot(timestamp, volume, label = 'VOD volumes')
-    #plt.plot([1,2],[1,4])
+    plt.plot([1,2],[1,4])
     #matplotlib.pyplot.plot([1,2],[1,4])
     #plt.xlabel('Time')
     #plt.ylabel('Volume')
@@ -45,7 +59,7 @@ def graph(stock, duration):
     #plt.legend()
     # Ultimately not needed
     #plt.show()
-    #return raw_data
+    return stock_data
 
 graph("VOD", "1d")
 
