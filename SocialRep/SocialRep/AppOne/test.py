@@ -36,3 +36,7 @@ for line in test_list:
 closeP=[]
 for i in stock_data:
     closeP.append(i[2])
+
+
+
+

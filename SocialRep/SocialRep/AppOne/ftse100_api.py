@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
-import datetime
+import pylab
+import datetime as dt
 import urllib
 import numpy as np
+import matplotlib.dates as mdates
 
 
 # consumer_key = "dj0yJmk9bEQwNmhTUkphbDFnJmQ9WVdrOU1IZEZRM0psTXpJbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1mZQ--"
@@ -10,20 +12,15 @@ import numpy as np
 #stock = "VOD"
 #duration = "1d"
 
-
 # For durations shorter than 10days, the API uses the UNIX time, which we need to transcode
 def convert_timestamp(Utimestamp):
     timestamp = datetime.datetime.fromtimestamp(int(Utimestamp)).strftime('%Y-%M-%d %H:%M:%S')
     return timestamp
 
 def build_dataset(dst_name, src_name, index, UTime):
-    if UTime == False:
-        for i in src_name:
-            dst_name.append(i[index])
-    else:
-         for i in src_name:
-            aux = convert_timestamp(i[index])
-            dst_name.append(aux)       
+    for i in src_name:
+        aux = float(i[index])
+        dst_name.append(aux)
 
 def graph(stock, duration):
     yahoo_url = "http://chartapi.finance.yahoo.com/instrument/1.0/" + stock + "/chartdata;type=quote;range=" + duration + "/csv"
@@ -38,7 +35,9 @@ def graph(stock, duration):
                 stock_data.append(split_line)
     # Declaration of our categories
     timestamp = []
-    build_dataset(timestamp,stock_data,0,True)
+    build_dataset(timestamp,stock_data,0,False)
+    dateconv = np.vectorize(dt.datetime.fromtimestamp)
+    timestamp = dateconv(timestamp)
     closeP = []
     build_dataset(closeP,stock_data,1,False)
     highP = []
@@ -50,18 +49,9 @@ def graph(stock, duration):
     volume = []
     build_dataset(volume,stock_data,5,False)
     # Plotting parameters
-    #plt.plot(timestamp, volume, label = 'VOD volumes')
-    plt.plot([1,2],[1,4])
-    #matplotlib.pyplot.plot([1,2],[1,4])
-    #plt.xlabel('Time')
-    #plt.ylabel('Volume')
-    #plt.title("Vodafone Group Limited - price at the closure")
-    #plt.legend()
-    # Ultimately not needed
-    #plt.show()
-    return stock_data
-
-graph("VOD", "1d")
+    plt.plot(timestamp, highP, label = 'VOD high prices')
+    pylab.savefig('/Users/thomascriton/Documents/WebApp/SocialRep/SocialRep/AppOne/highP.png', bbox_inches = 'tight')
+    return True
 
 
 
