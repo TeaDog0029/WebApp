@@ -24,3 +24,5 @@ def queryTwitter(string, number): # number must be lower than 100
         tupleT = tupleT+ j
     return tupleT
 #search['statuses'][2]['text']
+
+

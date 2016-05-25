@@ -5,3 +5,14 @@ h1 {
 .graph {
 	margin-top: 25px; 
 }
+
+#tweet {
+	margin-right: 25px;
+	margin-top: 25px;
+}
+
+.top-margin {
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 15px
+}

@@ -19,10 +19,18 @@
         <div class = "row">
             <div class="col-md-6 text-center">
                 <img class = "graph" src = "{% static "AppOne/highP.png" %}" alt = "graph1" width = "75%">
+                <p class = "top-margin">Our indicators measure the following mood: {{ average_mood }}% </p>
+                {% for i in top_tweets %}
+                <p>{{ mood }}</p>
+                {% endfor %}
+                <p><a class="btn btn-primary btn-lg" href="" role="button"><span class = "glyphicon glyphicon-repeat"></span> Refresh</a></p>
             </div>
             <div class="col-md-6 text-center">
-                {{ top_tweets.1 }}
+                {% for tweet in top_tweets %}
+                <div id = "tweet"class="well"><p>{{ tweet }}</p></div>
+                {% endfor %}
             </div>
+        </div>
         </div>
     </div>
 </body>
