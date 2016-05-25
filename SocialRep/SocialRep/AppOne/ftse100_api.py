@@ -4,6 +4,7 @@ import datetime as dt
 import urllib
 import numpy as np
 import matplotlib.dates as mdates
+import os
 
 
 # consumer_key = "dj0yJmk9bEQwNmhTUkphbDFnJmQ9WVdrOU1IZEZRM0psTXpJbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1mZQ--"
@@ -11,6 +12,10 @@ import matplotlib.dates as mdates
 
 #stock = "VOD"
 #duration = "1d"
+
+def img_folder():
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'static/AppOne')
+    return path
 
 # For durations shorter than 10days, the API uses the UNIX time, which we need to transcode
 def convert_timestamp(Utimestamp):
@@ -50,7 +55,8 @@ def graph(stock, duration):
     build_dataset(volume,stock_data,5,False)
     # Plotting parameters
     plt.plot(timestamp, highP, label = 'VOD high prices')
-    pylab.savefig('/Users/thomascriton/Documents/WebApp/SocialRep/SocialRep/AppOne/highP.png', bbox_inches = 'tight')
+    #pylab.savefig('/Users/thomascriton/Documents/WebApp/SocialRep/SocialRep/AppOne/static/AppOne/highP', bbox_inches = 'tight')
+    pylab.savefig(img_folder()+'/highP.png', bbox_inches = 'tight')
     return True
 
 
