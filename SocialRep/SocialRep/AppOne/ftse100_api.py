@@ -5,6 +5,7 @@ import urllib
 import numpy as np
 import matplotlib.dates as mdates
 import os
+import sys
 
 
 # consumer_key = "dj0yJmk9bEQwNmhTUkphbDFnJmQ9WVdrOU1IZEZRM0psTXpJbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmeD1mZQ--"
@@ -29,7 +30,11 @@ def build_dataset(dst_name, src_name, index, UTime):
 
 def graph(stock, duration):
     yahoo_url = "http://chartapi.finance.yahoo.com/instrument/1.0/" + stock + "/chartdata;type=quote;range=" + duration + "/csv"
-    raw_data = urllib.request.urlopen(yahoo_url).read().decode()
+    # urllib cannot be called the same way in python 2.7 and python 3.4, which is why I need to import sys
+    if sys.version_info < (3,0,0):
+        raw_data = urllib.urlopen(yahoo_url).read().decode()
+    else:
+        raw_data = urllib.request.urlopen(yahoo_url).read().decode()
     stock_data =[]
     split_data = raw_data.split('\n')
     # First, we get rud of the header of the document

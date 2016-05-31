@@ -4,7 +4,7 @@ from django.utils import timezone
 # Create your models here.
 class Tweet(models.Model):
 	identifier = models.IntegerField(default = 0)
-	text = models.CharField(max_length = 200)
+	text = models.CharField(max_length = 200, default = "Tweet missing")
 	# Can be 'positive' or 'negative'
 	category = models.CharField(max_length = 10)
 

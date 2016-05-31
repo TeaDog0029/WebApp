@@ -7,5 +7,5 @@ router.register(r'tweets',views.TweetViewSet)
 
 urlpatterns = [
 	url(r'^$', views.liveFeed, name = 'liveFeed'),
-	url(r'^api-tweet$',include('rest_framework.urls', namespace = 'rest_framework')),
+	url(r'^api-tweet',include('rest_framework.urls', namespace = 'rest_framework')),
 ]
